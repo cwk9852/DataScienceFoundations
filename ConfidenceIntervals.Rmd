@@ -1,0 +1,35 @@
+---
+title: "Confidence Intervals"
+output: html_notebook
+---
+One of the most popular ways to estimate an unknown parameter is the confidence interval.  Instead of just using a point estimate, it gives an interval estimate.  
+This gives more information about the unknown parameter. In this assignment, we will examine confidence interval. 
+
+* Load Data JNJ.csv
+
+```{r}
+library(readr)
+jnj <- read_csv("data/JNJ.csv")
+# create a dataframe of closing price 
+close <- jnj$Close
+head(close)
+```
+
+* Using R, compute the sample mean of closing price of Johnson and Johnson’s (JNJ) daily stock prices.
+* Using R, compute the standard deviation. Also, compute the 90%, 95%, and 95% confidence intervals for the true mean closing JNJ stock price. 
+
+```{r}
+mean(close)
+sd(close)
+length(close)
+```
+In order to find the confidence intervals we have to calculate the error m.  Since the population standard deviation is unknown (typical) we will multiply the critical value by the sample standard deviation divided by the sqrt of n. A t-distribution was selected, critical values sourced from [NIST][nist], df=n-1=20.  
+
+* Discuss the pattern of the three confidence intervals and explain why such a pattern exists.
+* Discuss the advantage(s) and disadvantage(s) of increasing the confidence levels?
+* Interpret the confidence intervals
+```{r}
+
+```
+[nist]: https://www.itl.nist.gov/div898/handbook/eda/section3/eda3672.htm "Critical Values"
+
